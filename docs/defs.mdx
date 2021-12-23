@@ -1,0 +1,67 @@
+---
+id: defs
+---
+
+# Terms and Definitions
+
+We need somewhere to link to when defining uncommon or easily misunderstood
+terms. So here this is:
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>node</td>
+      <td>
+        A singular entry point in the database. Uniquely identified with a uid.
+        Equivalent to NoSQL as a document, or RDBMS as a row.
+      </td>
+    </tr>
+    <tr>
+      <td>server-node</td>
+      <td>
+        A server running either a Dgraph zero or alpha service. In a distributed
+        configuration, there will be multiple server-nodes, but in a standalone
+        configuration, a single server-node will run both the zero and alpha
+        services.
+      </td>
+    </tr>
+    <tr>
+      <td>uid</td>
+      <td>
+        A unique identifier, 64bit integer represented in hexadecimal form, that
+        is unique within the scope of a Dgraph Cluster. Not to be confused with
+        UUID which are universally unique identifiers and outside of the scope
+        of Dgraph.
+      </td>
+    </tr>
+    <tr>
+      <td>alpha service</td>
+      <td>
+        The data processing/storing algorithms service. Distribution happens by
+        spinning up alpha services in groups of 3 each in their own dedicated
+        machine with their own hard disk
+      </td>
+    </tr>
+    <tr>
+      <td>zero service</td>
+      <td>
+        The cluster manager service. Every instance of a Dgraph must have a zero
+        service running even if it is not distributed.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

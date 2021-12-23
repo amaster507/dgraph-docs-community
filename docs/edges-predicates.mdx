@@ -1,0 +1,48 @@
+---
+id: edge-predicates
+title: Edges and Predicates
+---
+
+# Coming Soon
+
+This page is still being developed. Please check back later.
+
+# Fields: The keys of the graph.
+
+# Edges: The relationships of the graph.
+
+# Predicates: The properties of the graph.
+
+:::tip Disambiguation: Predicate vs. Edge vs. Field
+
+It is common for these three terms to be interchnaged by many Dgraph engineers
+and developers.
+
+The term `Edge` is uniquely to define just the relationships between two nodes
+of the graph.
+
+The term `Predicate` is broadly known as either an Edge or a Predicate, but
+specifically refers to a scalar or list of scalar values in a graph.
+
+The term `Field` is a GraphQL term to refer to either an Edge or Predicate.
+There is no distinction to Field whether it is an edge or a scalar, or a list of
+scalars or edges.
+
+Given this schema:
+
+```GraphQL
+type Person {
+  name: String!
+  hobbies: [String]
+  friends: [Person]
+  address: Address
+}
+```
+
+Collectively, `name`, `hobbies`, `friends`, and `address` are are known as
+`fields` and broadly known as `predicates` in Dgraph terminology.
+
+But, specifically, `name` and `Hobbies` are edges, because they form the
+relationships between two or more Persons or a Person and an Address.
+
+:::

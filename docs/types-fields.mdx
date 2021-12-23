@@ -1,0 +1,36 @@
+---
+id: type-fields
+sidebar_position: 1
+title: Types and Fields
+---
+
+# Coming Soon
+
+This page is still being developed. Please check back later.
+
+# Nodes: An Object in the Graph.
+
+:::tip
+
+The term `Object` can be ambiguous. In this context, we are using Object the
+same way it is used in the term `JSON`. If you are familiar already with
+GraphQL, you will know that all responses to GraphQL queries and mutations are
+returned in a JSON formatted string.
+
+:::
+
+# Fields: Properties of Types.
+
+Some commonly refer to fields as properties to align with other programming
+languages where objects have properties.
+
+# Types: Collections of Fields.
+
+```GraphQL
+type Person {
+  name: String!
+  hobbies: [String]
+  friends: [Person]
+  address: Address
+}
+```
