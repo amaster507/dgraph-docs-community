@@ -33,14 +33,7 @@ const sidebars = {
       ],
     },
     {
-      Directives: [
-        "directives",
-        "schema-directives",
-        "client-directives",
-        {
-          Advanced: ["cascade"],
-        },
-      ],
+      Directives: ["directives", "schema-directives", "client-directives"],
     },
     "generating-filters",
     "maintaining-relationships",
@@ -50,7 +43,7 @@ const sidebars = {
         "select-one",
         "select-many",
         {
-          Advanced: ["password-check", "custom-queries"],
+          Advanced: ["cascade", "password-check", "custom-queries"],
         },
       ],
     },
@@ -87,29 +80,31 @@ const sidebars = {
         "lambdas",
         "external-data",
         "hooking-mutations",
-        "remapping-fields",
+        "remapping-schema",
         "language-support",
-        {
-          Gotchas: [
-            "non-unique-xid",
-            "set-vs-array",
-            "required-lists",
-            "reverse-inverse",
-          ],
-        },
+      ],
+    },
+    {
+      Gotchas: [
+        "gotchas",
+        "non-unique-xid",
+        "set-vs-array",
+        "required-lists",
+        "reverse-inverse",
       ],
     },
     {
       "The Missing Features": [
+        "missing-features",
         "nested-filtering",
         "post-update-auth",
         "deep-mutations",
         "field-level-auth",
-        "facets",
+        // "facets",
       ],
     },
     {
-      "Community Recommendations": [
+      Recommendations: [
         {
           Frameworks: ["react", "next-js", "sveltekit", "angular"],
         },

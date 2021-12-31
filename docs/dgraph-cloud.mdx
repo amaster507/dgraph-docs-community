@@ -1,8 +1,60 @@
 ---
 id: dgraph-cloud
-title: Dgraph Cloud
+sidebar_label: Dgraph Cloud
+title: Dgraph Cloud, the GraphQL as a Service
 ---
 
-# Coming Soon
+import ComingSoon from "./_coming-soon.mdx";
 
-This page is a placeholder for content coming soon. Please check back later.
+<ComingSoon />
+
+We say GraphQL as a Service (**GaaS**), but it is so much more than just
+GraphQL. Dgraph Cloud is a complete Backend as a Service (**BaaS**). If it were
+just a GaaS then it would not be a complete data store but merely a layer on top
+of another Database as a Service (**DBaaS**). Dgraph is uniquely positioned
+against all its competitors to provide a complete BaaS complete with
+Authorization middleware, cache, and ready to scale!
+
+## What is Missing from Dgraph Cloud?
+
+Dgraph is a greate service, but it is not all roses without thorns. Depending on
+your use cases you may find a need for additional backend functionality that is
+not provided by Dgraph Cloud at this time. To be clear, here are a few things
+that Dgraph Cloud cannot do at the moment without additional workarounds and
+potentially requiring 3rd party services.
+
+### File Storage
+
+Dgraph Cloud does not have a file storage system. Users have found that they can
+use S3 storage or other 3rd party file storage services and save the links to
+files in the graph instead of the file themselves. It is possible for Dgraph to
+store very long textual data and it is thoeretical possible to store files in
+their binary form as textual strings although Dgraph does not officially
+recommend this usage.
+
+### Authentication
+
+Dgraph does allow you to store user data and has mechanisms to store passwords,
+but Dgraph does not currently have built in methods to generate jwt tokens to be
+used with GraphQL auth rules. Users have used 3rd party authentication services
+such as Auth0 and Firebase, or have even created their own authentication
+scripts against the Dgraph database itself.
+
+### Input Validation
+
+While GraphQL does do strict type checking, there is lacking any additional
+directives built into Dgraph at this time to perform input validation. Input
+validation involves checking inputs against rules such as strings must be an
+email, or integer must be within a range, or a list must contain at least one
+value. Users have made attempts to do some input validation using auth rule
+workarounds, but it does not provide a complete solution at this time.
+
+For some of these use cases, you may find yourself needing a backend wrapper
+around Dgraph Cloud which is feasable to setup with Apollo Federation.
+
+:::tip More Dgraph Gotchas
+
+For more Dgraph gotchas, see [Gotchas](/docs/gotchas) and
+[Missing Features](/docs/missing-features).
+
+:::

@@ -1,6 +1,6 @@
 ---
 id: intro
-sidebar_position: 1
+sidebar_label: What is Dgraph GraphQL?
 title: What is Dgraph GraphQL?
 ---
 
