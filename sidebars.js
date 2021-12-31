@@ -22,7 +22,7 @@ const sidebars = {
     "graphq-vs-dql",
     {
       "Data Modeling": [
-        "overview",
+        "modeling-overview",
         "type-fields",
         "edge-predicates",
         "identification",
@@ -36,11 +36,105 @@ const sidebars = {
       Directives: [
         "directives",
         "schema-directives",
+        "client-directives",
         {
           Advanced: ["cascade"],
         },
       ],
     },
+    "generating-filters",
+    "maintaining-relationships",
+    {
+      "Querying Data": [
+        "query-syntax",
+        "select-one",
+        "select-many",
+        {
+          Advanced: ["password-check", "custom-queries"],
+        },
+      ],
+    },
+    {
+      "Mutating Data": [
+        "mutation-syntax",
+        "create-nodes",
+        "update-nodes",
+        "delete-nodes",
+      ],
+    },
+    "fragments",
+    {
+      "Beyond the Basics": [
+        "subscriptions",
+        "hiding-operations",
+        {
+          "Authentication/Authorization": [
+            "jwt",
+            "rbac-auth",
+            "abac-auth",
+            "gbac-auth",
+            "combining-auth-rules",
+            "role-less-auth",
+            {
+              "Authentication Services": [
+                "custom-auth",
+                "auth0",
+                "firebase-auth",
+              ],
+            },
+          ],
+        },
+        "lambdas",
+        "external-data",
+        "hooking-mutations",
+        "remapping-fields",
+        "language-support",
+        {
+          Gotchas: [
+            "non-unique-xid",
+            "set-vs-array",
+            "required-lists",
+            "reverse-inverse",
+          ],
+        },
+      ],
+    },
+    {
+      "The Missing Features": [
+        "nested-filtering",
+        "post-update-auth",
+        "deep-mutations",
+        "field-level-auth",
+        "facets",
+      ],
+    },
+    {
+      "Community Recommendations": [
+        {
+          Frameworks: ["react", "next-js", "sveltekit", "angular"],
+        },
+        {
+          "GraphQL Clients": [
+            {
+              Javascript: ["apollo-client", "urql", "j-dgraph", "easy-dgraph"],
+            },
+          ],
+        },
+        {
+          "GraphQL Tools": [
+            "dgraph-cloud",
+            "apollo-studio",
+            "graphql-playground",
+            "graphiql",
+            "insomnia",
+          ],
+        },
+        {
+          Visualizers: ["ratel", "sigma-js", "constellation", "d3"],
+        },
+      ],
+    },
+    "useful-links",
     "defs",
   ],
 };

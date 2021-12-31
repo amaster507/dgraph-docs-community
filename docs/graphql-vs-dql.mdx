@@ -3,6 +3,83 @@ id: graphq-vs-dql
 title: GraphQL vs. DQL
 ---
 
-# Coming Soon
+import BlogLink from "../src/components/BlogLink";
 
-This page is a placeholder for content coming soon. Please check back later.
+# GraphQL vs. DQL
+
+One of the purposes of these community docs was to help with this main key
+concept and help guide you on your development path using Dgraph. If you go to
+the official Dgraph Docs, you will notice that the docs are split between
+GraphQL and DQL.
+
+- [Official Dgraph GraphQL Docs](https://dgraph.io/docs/graphql/)
+- [Official Dgraph DQL Docs](https://dgraph.io/docs/dql/)
+
+## What is DQL?
+
+If this is your first time to Dgraph, you may have heard of GraphQL before, but
+what is DQL?
+
+**DQL** is Dgraph Query Language developed by Dgraph. It was originally named
+_graphql+-_, but this was changed over time to prevent even more confusion
+between GraphQL and DQL.
+
+:::tip
+
+If this is your first time hearing about GraphQL, that is not a problem either
+as these community docs will start at ground zero for the GraphQL beginners and
+serve as a GraphQL fundamental review for GraphQL experts.
+
+:::
+
+## Why the need for DQL?
+
+GraphQL is a great language structure for working with an API, but it was never
+intended to be used as a database query language. Dgraph liked GraphQL and chose
+to fashion their graph database language around the concepts of GraphQL, but add
+in their own unique syntax structures to develop a language that can be used to
+handle core database functions.
+
+Before Dgraph version 20.03, which began the calendar versioning of Dgraph, the
+core of Dgraph only had endpoints for DQL and was lacking a spec-compliant
+GraphQL endpoint. Anybody who wanted to have a GraphQL API to use for their
+front-end applications had to write their own backend layer with their own
+resolvers. Version 20.03 brought the spec-compliant GraphQL endpoint into the
+core of Dgraph, without removing the DQL endpoints. The GraphQL endpoint could
+be understood as a layer around the DQL endpoints because it takes the GraphQL
+queries and mutations and rewrites them to DQL. I say it is not wrapping layer
+though because it is all inside of the core of the Dgraph codebase. The
+functions live together in the same repo and are deployed as a single
+self-contained database having both the DQL and GraphQL endpoints.
+
+:::tip No DQL Needed :)
+
+Since Dgraph v. 20.03, you can start using Dgraph without needing any DQL.
+
+You can deploy and start using Dgraph with only a working knowledge of GraphQL,
+as you will see in these docs.
+
+So when might you need to use DQL? Here are a few scenarios when to use DQL:
+
+- Ingesting data in bulk
+- Dropping data in bulk
+- Using Dgraph for loosely typed or untyped data
+- Migrating data after schema changes
+
+:::
+
+## Using GraphQL and DQL together.
+
+It is possible to use GraphQL and DQL together. These community docs are
+focusing specically on GraphQL, but will contain tidbits and advanced topics to
+help show you what you need to know to use these two languages together.
+
+If you want a side by side comparison for DQL and GraphQL along with pointers of
+when to use which one, then check the blog post:
+
+<BlogLink
+  imageUrl="https://dgraph.io/blog/images/dql-vs-graphql.jpg"
+  url="https://dgraph.io/blog/post/graphql-vs-dql/"
+  title="GraphQL vs DQL"
+  subtitle="by Anthony Master"
+/>

@@ -1,0 +1,53 @@
+.BlogLink {
+  display: block;
+  cursor: pointer;
+  background: #212121;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
+  margin: 0 0 80px;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}
+
+.BlogLink:hover p {
+  text-decoration: underline;
+}
+
+.background {
+  border-radius: 10px;
+  opacity: 0.5;
+  display: block;
+  filter: brightness(90%) saturate(50%);
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  left: 24px;
+  margin: 0;
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: aliceblue;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  line-height: 48px;
+  font-size: 36px;
+}
+
+.subtitle {
+  font-weight: 500;
+}

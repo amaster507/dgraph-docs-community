@@ -24,7 +24,7 @@ and iteration on schema changes.
 With Dgraph you just define you schema types add a few directives and deploy and
 the rest is taken care of for you.
 
-Modeling your data could be this easy:
+## Modeling your data could be this easy:
 
 ```GraphQL
 # Draph v21.12
@@ -112,7 +112,7 @@ What would it take to scale both a database and a API at the same time
 proportionately? Dgraph solves all of the problems with scaling, and allows you
 to focus on your front-end development.
 
-## Is a Dgraph really any better than a RDBMS or other NoSQL?
+## Is a Dgraph really any better than an RDBMS or other NoSQL?
 
 Yes! We could dive down into technicalities, but we can discuss those later.
 What you need to know is that Dgraph delivers an API so you don’t have to worry
