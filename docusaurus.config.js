@@ -15,7 +15,6 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "amaster507", // Usually your GitHub org/user name.
   projectName: "dgraph-docs-community", // Usually your repo name.
-
   presets: [
     [
       "classic",
@@ -23,11 +22,13 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/amaster507/dgraph-docs-community",
+          editUrl:
+            "https://github.com/amaster507/dgraph-docs-community/blob/master/",
         },
         blog: {
           showReadingTime: true,
-          editUrl: "https://github.com/amaster507/dgraph-docs-community",
+          editUrl:
+            "https://github.com/amaster507/dgraph-docs-community/blob/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -35,7 +36,6 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
