@@ -2,7 +2,7 @@
 [![made-with-Docusaurus](https://img.shields.io/badge/Made%20with-Docusaurus-3dcd5d.svg)](https://docusaurus.io)
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 [![made-for-Dgraph](https://img.shields.io/badge/Made%20for-Dgraph-f84440.svg)](http://dgraph.io)
-[![made-for-Dgraph](https://img.shields.io/badge/Made%20for-Dgraph-f84440.svg)](http://dgraph.io)
+[![Learn-GraphQL](https://img.shields.io/badge/Learn-GraphQL-e10098.svg)](http://graphql.org)
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/amaster507/dgraph-docs-community.svg)](https://GitHub.com/amaster507/dgraph-docs-community/pull/)
@@ -19,7 +19,9 @@
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/5vsjb8ZBZp "Unofficial Community Discord Server")
 [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/dgraphlabs "Official Dgraph Twitter")
 
-# Website
+# Dgraph Community Docs
+
+This can be viewed deployed at https://dgraph.community
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern
 static website generator.
@@ -38,25 +40,25 @@ To develop locally first
 3. Open a Terminal/Comman Prompt
 4. Clone this repo
 
-```sh
+```bash
 git clone https://github.com/amaster507/dgraph-docs-community.git <your-directory-path>
 ```
 
 5. Move terminal location to inside cloned repo
 
-```sh
+```bash
 cd <your-directory-path>
 ```
 
 6. Install dependencies
 
-```sh
+```bash
 yarn
 ```
 
 ### Local Development
 
-```sh
+```bash
 yarn start
 ```
 
