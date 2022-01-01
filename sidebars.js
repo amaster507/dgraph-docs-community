@@ -73,6 +73,9 @@ const sidebars = {
                 "custom-auth",
                 "auth0",
                 "firebase-auth",
+                "magic-link",
+                "fusion-auth",
+                "okta",
               ],
             },
           ],
@@ -104,19 +107,45 @@ const sidebars = {
       ],
     },
     {
-      Recommendations: [
+      Tools: [
         {
-          Frameworks: ["react", "next-js", "sveltekit", "angular"],
-        },
-        {
-          "GraphQL Clients": [
-            {
-              Javascript: ["apollo-client", "urql", "j-dgraph", "easy-dgraph"],
-            },
+          Frameworks: [
+            "react-next-js",
+            "vue-nuxt",
+            "angular",
+            "sveltekit",
+            "flutter",
           ],
         },
         {
-          "GraphQL Tools": [
+          Clients: [
+            {
+              Javascript: ["apollo-client", "urql", "fetch", "j-dgraph"],
+            },
+            {
+              Dart: ["dart-graphql", "gql-dart"],
+            },
+            { Python: [] },
+            { Go: [] },
+            { "C#": [] },
+            { Java: [] },
+          ],
+        },
+        {
+          IDE: [
+            "dgraph-cloud",
+            "apollo-studio",
+            "graphql-playground",
+            "graphiql",
+            "insomnia",
+            "thunder-client",
+          ],
+        },
+        {
+          "Query Builders": ["easy-dgraph", "dqlx"],
+        },
+        {
+          "Development Tools": [
             "dgraph-cloud",
             "apollo-studio",
             "graphql-playground",
