@@ -4,6 +4,99 @@ sidebar_label: Firebase
 title: Authentication with Firebase
 ---
 
-import ComingSoon from "./_coming-soon.mdx";
+# Firebase Authentication
 
-<ComingSoon />
+This documention assumes you know the basics about Firebase. For Firebase configuration and more, see [here](https://dev.to/jdgamble555/dgraph-firebase-authentication-role-based-access-control-43o).
+
+## Version 1 - Standard Claims
+
+### Step 1 - Add firebase to your package.json
+
+```npm i firebase```
+
+### Step 2 - Create a *firebase.ts* file
+
+```typescript
+import { initializeApp } from 'firebase/app';
+import {
+    getAuth,
+    getIdToken,
+    GoogleAuthProvider,
+    isSignInWithEmailLink,
+    onIdTokenChanged,
+    sendSignInLinkToEmail,
+    signInWithEmailLink,
+    signInWithPopup,
+    signOut
+} from 'firebase/auth';
+import type { User } from 'firebase/auth';
+import { firstValueFrom, Observable } from 'rxjs';
+
+import { firebase_config } from '../config';
+
+
+export interface Auth {
+    displayName: string;
+    photoURL: string;
+    uid: string;
+    email: string;
+}
+
+initializeApp(firebase_config);
+
+// interface for database record, not firebase record
+export interface UserRec {
+    id?: string;
+    email?: string;
+    displayName?: string;
+}
+
+const auth = getAuth();
+
+export async function loginWithGoogle() {
+    return await signInWithPopup(auth, new GoogleAuthProvider());
+}
+
+export async function logout() {
+    return await signOut(auth);
+}
+
+export async function getToken() {
+    const u = new Observable<User>((observer) => {
+        onIdTokenChanged(auth, (observer));
+    });
+    return await firstValueFrom(u)
+        .then(async (_user) => _user
+            ? await getIdToken(_user)
+            : null
+        );
+}
+```
+If you know firebase, this can vary depending on your login methods. The important part is getting the token with a promise with **getToken()**.
+
+This should work with Sveltekit or React, although your Vue or Angualar may have a little different Firebase setup.
+
+Because firebase already saves the token within the localStorage, you don't need to keep the state throughout your app. However, if you use Apollo or URQL, you will need to configure them to accept `async` tokens.
+
+Here are some helpful links:
+- [Angular urql](https://github.com/jdgamble555/angular-fire-dgraph/blob/master/src/app/core/urql.module.ts)
+- [Svelte Apollo](https://github.com/jdgamble555/realtime-todos/blob/master/src/apollo.ts)
+
+The Apollo and URQL core code should be the same in all frameworks.
+
+You can also use the [j-dgraph](https://github.com/jdgamble555/j-dgraph) package to easily add the token with no configuration. If you come from Firebase or Supabase, this package will be an eye pleaser.
+
+### Step 3 - Add the proper headers to your dgraph schema.
+
+Make sure to update your Firebase Project ID.
+
+```go
+# Dgraph.Authorization {"Header":"X-Auth-Token","Namespace":"https://dgraph.io/jwt/claims","JWKURL":"https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com","Audience":["YOUR_PROJECT_ID"]}
+```
+
+Everything should now work as expected.
+
+## Version 2 - Custom Claims
+
+For more advanced claim generation, see [here](https://dev.to/jdgamble555/dgraph-firebase-authentication-role-based-access-control-43o)
+
